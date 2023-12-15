@@ -1,0 +1,181 @@
+<!-- myapp/templates/plot.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-HnnOSh0JQzS1OPBjt1p8qEu6Zd6I8sQ/3vqRZb/KHEsdsR2h2Bz5q6F7m8CKF54J" crossorigin="anonymous">
+    <!-- Include Plotly JS CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Custom styles -->
+    <style>
+        body {
+            padding-top: 56px; /* Adjusted for the fixed navbar */
+        }
+
+        .navbar {
+            background-color: #3498db;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">QuickBite</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Project Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dataviz">Data Visualization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conclusion">Learning Outcomes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#our-team">Our Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <section id="about">
+            <section>
+                <h2 class="mb-4">Project Information</h2>
+        
+                <p><strong>Project Title:</strong> Nexus Analytica - Data Integration and Visualization Solution</p>
+                <p><strong>Project Completion Date:</strong> 12/14/2023 </p>
+                <p><strong>Client:</strong> QuickBites</p>
+        
+                <h2 class="mb-4">Objective</h2>
+        
+                <p> The objective of this project is to conduct a comprehensive analysis of food establishments in two major cities, Mumbai and Delhi, using a provided dataset. The analysis focuses on key aspects such as home delivery services, average cost for two people, and the distribution of restaurant ratings.
+                    
+                    <h3 class="mb-4">Data Overview:</h3>
+                    The dataset contains information about various food establishments, including their names, ratings, discount percentages, cashback amounts, cost for two people, city, locality, home delivery availability, and menu item counts.</p>
+            </section>
+        
+            <section>
+                <h2 class="mb-4">Team and Roles</h2>
+                <ul>
+                    <li><strong>Developers (Rutva Patel):</strong> Led the development of the software, both front and back end.</li>
+                    <li><strong>Project Manager (Mitali Dhadich):</strong> Managed project deliverables, collaborated with the Business
+                        Analyst for documentation.</li>
+                    <li><strong>Business Analyst (Rahul Pandey):</strong> Developed comprehensive documentation for the proposal.</li>
+                    <li><strong>Data Analyst (Chintan Chauhan):</strong> Acquired data, built data models, and set up the database as needed.
+                    </li>
+                </ul>
+            </section>
+        
+            <section>
+                <h2 class="mb-4">Key Achievements</h2>
+            
+                <h3 class="mb-4">Data Acquisition <i class="fas fa-database"></i></h3>
+                <ul>
+                    <li>Successfully acquired data from a remote source (URL) using Python.</li>
+                    <li>Utilized a meaningful dataset that demonstrated an understanding of XYZ's interests.</li>
+                </ul>
+            
+                <h3 class="mb-4">Database Management <i class="fas fa-server"></i></h3>
+                <ul>
+                    <li>Implemented a cloud database (MongoDB) for efficient storage.</li>
+                    <li>Executed a pseudo-batch process running every 24 hours to acquire and store data.</li>
+                </ul>
+            
+                <h3 class="mb-4">Web Application Development <i class="fas fa-code"></i></h3>
+                <ul>
+                    <li>Developed a robust web application using the Flask framework (Python on the server-side).</li>
+                    <li>Leveraged JavaScript for client-side development.</li>
+                    <li>Displayed data through interactive charts and graphs using Google Charts.</li>
+                    <li>Conducted a fit-gap analysis to ensure the application met QuickBites's requirements.</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Data Visualization Section -->
+        <section id="dataviz" class="mt-5">
+            <h2 class="mb-4">Data Visualization</h2>
+            <div id="plotly-graph" class="bg-white p-4">
+                {{ graph_html|safe }}
+            </div>
+        </section>
+
+        <section id="conclusion" class="mt-5">
+            <div class="summary-section">
+                <h2 class="mb-4">Conclusion</h2>
+                <p>
+                    In the denouement, we synthesized our findings into a cohesive narrative. The project not only delivered
+                    insights into the restaurant industry but also underscored the potential of data visualization in
+                    deciphering complex datasets.
+                    Stakeholders were equipped not only with information but with a panoramic understanding of the gastronomic
+                    ecosystem.
+                </p>
+            </div>
+    
+        </section>
+         <!-- Our Team Section -->
+         <section id="our-team" class="mt-5">
+            <h2>Our Team</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Chintan Chauhan</td>
+                        <td>Data Analyst</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Rutva Patel</td>
+                        <td>Developer</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Mitali Dhadich</td>
+                        <td>Project Manager</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Rahul Pandey</td>
+                        <td>Business Analyst</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
