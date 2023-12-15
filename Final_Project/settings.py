@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-9et4js252a!&xmxdy01sj2jepxn@pb9j3eqnk(sgx16^p+cn@4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','django-quickbite-dash-app.onrender.com','127.0.0.1']
+ALLOWED_HOSTS = ['localhost','django-quickbite-dash-app.onrender.com','127.0.0.1:8000']
 
 
 # Application definition
